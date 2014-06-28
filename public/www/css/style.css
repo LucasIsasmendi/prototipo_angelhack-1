@@ -1,0 +1,38 @@
+#up_left{
+	position: absolute;
+	top:0px;
+	left: 0px;
+}
+
+#up_right{
+	position: absolute;
+	top:0px;
+	right: 0px;
+}
+
+#down_left{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+#down_right{
+	position:absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.corners{
+	background-color: red;
+	width: 20%;
+	height: 30%;
+}
+
+.feed {
+  width: 200px;
+  height: 80%;
+}
+
+.swiper-slide{
+	 width: 200px;
+}
