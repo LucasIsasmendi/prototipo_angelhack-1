@@ -1,0 +1,16 @@
+{
+  "name": "PrototipoAngelhack",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Testear? en una hackaton? JAJAJA\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "dependencies": {
+    "zmq": "~2.6.0",
+    "socket.io": "~0.9.16",
+    "express": "^4.4.1"
+  }
+}
