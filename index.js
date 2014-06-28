@@ -5,6 +5,11 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var app            = express();
 
+// incluir sockets
+var zmq = require('zmq');
+var subscriber = zmq.socket('sub');
+var fs = require('fs');
+
 app.use(express.static(__dirname + '/public')); 	// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); 		// loguear todo!
 app.use(bodyParser()); 			// agarrar informacion en POST
