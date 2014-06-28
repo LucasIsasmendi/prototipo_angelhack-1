@@ -5,7 +5,7 @@ $(function(){
     slidesPerView:3
   });
 
-
+/*
 var ContactManager = new Marionette.Application();
 
 ContactManager.addRegions({
@@ -25,7 +25,7 @@ ContactManager.mainRegion.show(staticView);
 });
 
 ContactManager.start();
-
+*/
 
 
 });
