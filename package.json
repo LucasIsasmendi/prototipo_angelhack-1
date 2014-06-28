@@ -10,10 +10,10 @@
   "author": "",
   "dependencies": {
     "zmq": "~2.6.0",
-    "socket.io": "~0.9.16",
-    "express": "^4.4.1",
+    "express": "^3.0.0",
     "morgan": "^1.1.1",
     "body-parser": "^1.4.3",
-    "method-override": "^2.0.2"
+    "method-override": "^2.0.2",
+    "socket.io": "^0.9.16"
   }
 }
