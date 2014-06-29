@@ -21,6 +21,7 @@ var miServer = http.createServer(app).listen(8080);
 var io = require('socket.io').listen(miServer);
 
 io.sockets.on('connection', function (socket) {
+  console.log('socket hacia navegador conectado!');
   socketHaciaNavegador = socket;
   /*
   socket.on('my other event', function (data) {
@@ -38,12 +39,15 @@ socketDesdePupil.on('message', function(reply) {
     if (result) {
       var x = result[1];
       var y = result[2];
+      console.log('recibiendo de pupil');
       if (socketHaciaNavegador) {
+        console.log('enviando al navegador');
         socketHaciaNavegador.emit('gaze', { x: x, y: y });
       }
     }
   }
 });
+
 socketDesdePupil.connect('tcp://127.0.0.1:5000');
 socketDesdePupil.subscribe('');
 process.on('SIGINT', function() {

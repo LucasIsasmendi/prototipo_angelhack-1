@@ -106,9 +106,9 @@ body {
 
 
 #feed {
-    
-    
-    
+
+
+
 }
 
 #feed > .menu {
@@ -121,7 +121,7 @@ body {
     text-align:center;
 }
 
-#feed > .menu_der { 
+#feed > .menu_der {
     background-color:#5d7ad5;
     left:auto;
     right:0;
@@ -257,7 +257,21 @@ body {
     font-size:12px;
     text-emphasis-style: dot;
 }
-    
 
 
 
+
+.cursor {
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  width: 100px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  position: absolute;
+  z-index: 99999;
+}
+.cursor.lindo {
+  background-color: rgba(0,255,0,0.7);
+  color: #00ff00;
+}

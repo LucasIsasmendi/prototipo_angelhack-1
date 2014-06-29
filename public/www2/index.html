@@ -4,11 +4,14 @@
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <script type="text/javascript" src="js/vendor/jquery.js"></script>
   <script type="text/javascript" src="js/vendor/underscore.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery.scrollTo.min.js"></script>
   <script type="text/javascript" src="js/principal.js"></script>
 </head>
 <body>
-  <div id="templates" style="display: none;">
-    <li class="jsFeedItem jsActivable">
+  <div class="cursor"></div>
+  <div id="templates" style="display: none">
+    <li class="jsFeedItem jsActivable feed_item">
       <div class="feed_avatar">[img]</div>
       <div class="feed_autor">John Doe</div>
       <div class="feed_fecha">12/12/14</div>
@@ -22,16 +25,16 @@
     <div id="principal">
 
       <section id="menuFeed">
-        <div class="botonMenu botonMenuTopLeft"></div>
-        <div class="botonMenu botonMenuTopRight"></div>
-        <div class="botonMenu botonMenuBottomLeft"></div>
-        <div class="botonMenu botonMenuBottomRight"></div>
+        <div class="boton botonMenu botonMenuTopLeft"></div>
+        <div class="boton botonMenu botonMenuTopRight"></div>
+        <div class="boton botonMenu botonMenuBottomLeft"></div>
+        <div class="boton botonMenu botonMenuBottomRight"></div>
         <div class="centroMenu centroMenuFeed"></div>
       </section>
 
       <section id="feed">
 
-        <div class="menu menu_izq boton jsBoton jsActivable">
+        <div class="menu menu_izq boton jsBoton jsActivable" data="menu_izq">
           <div class="loading"></div>
           <div class="boton_contenido">
             <div class="icono">[ico]</div>
@@ -45,7 +48,7 @@
             <li>
               <h1>Ultimas Noticias</h1>
             </li>
-            <li class="jsActivable activo">
+            <li class="activo">
               <div class="feed_avatar">[img]</div>
               <div class="feed_autor">John Doe</div>
               <div class="feed_fecha">12/12/14</div>
@@ -53,7 +56,7 @@
               <div class="feed_comentarios">5 comentarios</div>
               <div class="feed_contenido">Hola, esto es una prueba</div>
             </li>
-            <li class="jsActivable">
+            <li>
               <div class="feed_avatar">[img]</div>
               <div class="feed_autor">John Doe</div>
               <div class="feed_fecha">12/12/14</div>
@@ -61,7 +64,7 @@
               <div class="feed_comentarios">5 comentarios</div>
               <div class="feed_contenido">Hola, esto es una prueba</div>
             </li>
-            <li class="jsActivable">
+            <li>
               <div class="feed_avatar">[img]</div>
               <div class="feed_autor">John Doe</div>
               <div class="feed_fecha">12/12/14</div>
@@ -73,7 +76,7 @@
 
         </div>
 
-        <div class="menu menu_der boton jsBoton jsActivable">
+        <div class="menu menu_der boton jsBoton jsActivable" data="menu_der">
           <div class="loading"></div>
           <div class="boton_contenido">
             <div class="icono">[ico]</div>

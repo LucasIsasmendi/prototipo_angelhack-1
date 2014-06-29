@@ -2,12 +2,20 @@ $(document).ready(function() {
 
   var feedItemActivo = 1;
   var contadorActivaciones = 0;
+  var ultimaActivacion = null;
 
   // deteccion de mirada
 	var maxX = $("#background").width();
 	var maxY = $("#background").height();
 
   var moverMirada = function(x,y) {
+
+    x = x + 170;
+    y = y;
+    var toX = x;
+    var toY = y;
+		$(".cursor").offset({left: toX, top: toY});
+
     var detectarDwell = function(duracion, cb) {
       var esperoContador = contadorActivaciones;
       setTimeout(function() {
@@ -20,10 +28,12 @@ $(document).ready(function() {
     var seleccionarActivable = function($elem) {
       $(".activo").removeClass("activo");
       $elem.addClass("activo");
+      feedItemActivo = $elem.attr('data');
     }
 
-    var $elem = $(document.elementFromPoint(x,y));
+    var $elem = $(document.elementFromPoint(x-1,y-1));
     var $padreActivable = null;
+    console.log($elem);
     if ($elem.hasClass("jsActivable")) {
       $padreActivable = $elem;
     } else {
@@ -34,35 +44,43 @@ $(document).ready(function() {
     }
 
     if ($padreActivable) {
+
+      if ($padreActivable.attr('data') === ultimaActivacion) {
+        // abortar!
+        return;
+      }
+
       // console.log("algo",x,y);
       contadorActivaciones++;
+      ultimaActivacion = $padreActivable.attr('data');
+      $(".cursor").text(ultimaActivacion);
 
       if ($padreActivable.hasClass("jsFeedItem")) {
-        if ($padreActivable.attr('data') > feedItemActivo) {
+
+        console.log('mirando item ' + $padreActivable.attr('data') + " (activo=" + feedItemActivo + ")");
+
+        if ($padreActivable.attr('data') != feedItemActivo) {
           // mirando un elemento posterior
           detectarDwell(1000, function() {
             seleccionarActivable($padreActivable);
+            var y = $padreActivable.offset().top;
+            console.log('scrolleando ' + y);
+            $(".contenido").scrollTo($padreActivable, {duration: 600, offset: {top: -200}});
           });
-
-        } else if ($padreActivable.attr('data') < feedItemActivo) {
-          // mirando un elemento anterior
-          detectarDwell(1000, function() {
-            alert("ir al posterior!");
-          });
-
         } else {
           // mirando el elemento actual
         }
       }
 
-
+      $(".cursor").addClass("lindo");
     } else {
-      console.log("nada",x,y);
+      $(".cursor").removeClass("lindo");
+      // console.log("nada",x,y);
     }
 
   }
 
-  var testMode = true;
+  var testMode = false;
 
   if (testMode) {
 		$(document).mousemove(function(event) {
@@ -71,6 +89,7 @@ $(document).ready(function() {
 			moverMirada(x,y);
 		});
   } else {
+    console.log("iniciando socket io");
     var socket = io.connect('http://localhost');
     socket.on('gaze', function (data) {
       var relativeX = data.x;
@@ -79,6 +98,7 @@ $(document).ready(function() {
       var miradaX = 20 + (relativeX * maxX); // margin
       var miradaY = 20 + (relativeY * maxY); // margin
 
+      // console.log(miradaX,miradaY);
       moverMirada(miradaX,miradaY);
     });
   }
