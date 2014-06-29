@@ -17,38 +17,47 @@ $(document).ready(function() {
       }, duracion);
     }
 
-    var elem = document.elementFromPoint(x,y);
-    var $padreActivable = $(elem).parents(".jsActivable");
-    console.log($padreActivable);
-
-    if ($padreActivable.length > 0) {
-      console.log("algo",x,y);
-      contadorActivaciones++;
-    } else {
-      console.log("nada",x,y);
-    }
-
     var seleccionarActivable = function($elem) {
       $(".activo").removeClass("activo");
       $elem.addClass("activo");
     }
 
-    if ($padreActivable.hasClass("jsFeedItem")) {
-      if ($padreActivable.attr('data') > feedItemActivo) {
-        // mirando un elemento posterior
-        detectarDwell(1000, function() {
-          seleccionarActivable($padreActivable);
-        });
-
-      } else if ($padreActivable.attr('data') < feedItemActivo) {
-        // mirando un elemento anterior
-        detectarDwell(1000, function() {
-          alert("ir al posterior!");
-        });
-
-      } else {
-        // mirando el elemento actual
+    var $elem = $(document.elementFromPoint(x,y));
+    var $padreActivable = null;
+    if ($elem.hasClass("jsActivable")) {
+      $padreActivable = $elem;
+    } else {
+      $padreActivable = $elem.parents(".jsActivable");
+      if ($padreActivable.length > 0) {
+        $padreActivable = $padreActivable;
       }
+    }
+
+    if ($padreActivable) {
+      // console.log("algo",x,y);
+      contadorActivaciones++;
+
+      if ($padreActivable.hasClass("jsFeedItem")) {
+        if ($padreActivable.attr('data') > feedItemActivo) {
+          // mirando un elemento posterior
+          detectarDwell(1000, function() {
+            seleccionarActivable($padreActivable);
+          });
+
+        } else if ($padreActivable.attr('data') < feedItemActivo) {
+          // mirando un elemento anterior
+          detectarDwell(1000, function() {
+            alert("ir al posterior!");
+          });
+
+        } else {
+          // mirando el elemento actual
+        }
+      }
+
+
+    } else {
+      console.log("nada",x,y);
     }
 
   }
@@ -78,8 +87,8 @@ $(document).ready(function() {
   $templateFeedItem = $("#templates > .jsFeedItem");
   var cargarFeed = function() {
     var feedData = [{
-      autor: "Cosme Fulanito",
-      avatar: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1.0-1/c171.49.618.618/s100x100/525964_4764957322117_12835754_n.jpg",
+      autor: "Cosme Fulanito 123",
+      avatar: "./img/avatar.jpg",
       fecha: "2014-12-12",
       likes: 20,
       comentarios: 14,
@@ -87,7 +96,7 @@ $(document).ready(function() {
     },
     {
       autor: "Cosme Fulanito",
-      avatar: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1.0-1/c171.49.618.618/s100x100/525964_4764957322117_12835754_n.jpg",
+      avatar: "./img/avatar.jpg",
       fecha: "2014-12-12",
       likes: 20,
       comentarios: 14,
@@ -95,7 +104,7 @@ $(document).ready(function() {
     },
     {
       autor: "Cosme Fulanito",
-      avatar: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1.0-1/c171.49.618.618/s100x100/525964_4764957322117_12835754_n.jpg",
+      avatar: "./img/avatar.jpg",
       fecha: "2014-12-12",
       likes: 20,
       comentarios: 14,
@@ -103,7 +112,7 @@ $(document).ready(function() {
     },
     {
       autor: "Cosme Fulanito",
-      avatar: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1.0-1/c171.49.618.618/s100x100/525964_4764957322117_12835754_n.jpg",
+      avatar: "./img/avatar.jpg",
       fecha: "2014-12-12",
       likes: 20,
       comentarios: 14,
@@ -127,6 +136,11 @@ $(document).ready(function() {
       $nuevo.find(".feed_comentarios").text(item.comentarios + " comentarios");
       $nuevo.find(".feed_contenido").text(item.contenido);
       $nuevo.attr('data', contador);
+
+      if (contador === 1) {
+        $nuevo.addClass('activo');
+      }
+
       $nuevo.appendTo($contenedor);
       contador++;
     });
