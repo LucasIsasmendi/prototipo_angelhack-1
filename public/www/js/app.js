@@ -1,6 +1,5 @@
 
 
-console.log("hohohoads");
 function login(){
 	FB.login(function(response) {
 		console.log("Logged In");
@@ -15,7 +14,6 @@ function getFeed(){
 
 }
 
-
 function hablar(){
 	var video = document.getElementById("Video1");
 	//var button = document.getElementById("play");
@@ -29,6 +27,34 @@ function hablar(){
 	//}
 }
 
+//APP DATA
+var OjosQueHablan = new Marionette.Application();
+
+OjosQueHablan.addRegions({
+  mainRegion: "#main-region"
+});
+
+OjosQueHablan.navigate = function(route,  options){
+  options || (options = {});
+  Backbone.history.navigate(route, options);
+};
+
+OjosQueHablan.getCurrentRoute = function(){
+  return Backbone.history.fragment
+};
+
+OjosQueHablan.on("initialize:after", function(){
+  if(Backbone.history){
+    Backbone.history.start();
+
+    if(this.getCurrentRoute() === ""){
+      OjosQueHablan.trigger("contacts:list");
+    }
+  }
+});
+
+
+/////////PointDATA
 
   var moverMirada = function(x,y) {
     console.log('moverMirada', x, y);
@@ -45,69 +71,21 @@ function hablar(){
 		var gazeX = 20 + (relativeX * maxX); // margin
 		var gazeY = 20 + (relativeY * maxY); // margin
 
-		moveGaze(gazeX,gazeY);
+		moverMirada(gazeX,gazeY);
 
 	});
 
-	var FeedManager = new Marionette.Application();
+	var OjosQueHablan = new Marionette.Application();
 
-	FeedManager.addRegions({
+	OjosQueHablan.addRegions({
 		mainRegion: "#main-region"
 	});
 
-	FeedManager.Contact = Backbone.Model.extend({});
+	OjosQueHablan.on("initialize:after", function(){
+		OjosQueHablan.NewsApp.List.Controller.listNews();	
 
-	FeedManager.FeedCollection = Backbone.Collection.extend({
-		model: FeedManager.Contact
 	});
 
-
-	FeedManager.FeedItemView = Marionette.ItemView.extend({
-		tagName: "li",
-		template: "#feeds-list"
-	});
-
-	FeedManager.FeedsView = Marionette.CollectionView.extend({
-		tagName: "ul",
-		itemView: FeedManager.FeedItemView
-	});
-
-	FeedManager.on("initialize:after", function(){
-	var feeds = new FeedManager.FeedCollection([
-		{
-			foto: "Nico",
-			autor: "Nico",
-			comentario: "555-0160"
-		},
-		{
-			foto: "Nacho",
-			autor: "Nacho",
-			comentario: "555-0161"
-		},
-		{
-			foto: "Leonardo",
-			autor: "Leonardo",
-			comentario: "555-0162"
-		},
-		{
-			foto: "Emmanuel",
-			autor: "Emmanuel",
-			comentario: "555-0163"
-		},
-		{
-			foto: "Leonardo",
-			autor: "Lucas",
-			comentario: "555-0164"
-		}
-	]);
-
-	var feedsListView = new FeedManager.ContactsView({
-		collection: feeds
-	});
-
-	FeedManager.mainRegion.show(feedsListView);
-	});
-
-	FeedManager.start();
+	OjosQueHablan.start();
 
 });

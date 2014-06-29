@@ -1,6 +1,6 @@
 <html ng-app="EyeSocial">
 <head>
-	<title>Eye Social</title>
+	<title>Ojos que hablan</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/pupil_debugger.css">
@@ -14,20 +14,55 @@
 	<script type="text/javascript" src="./js/routers/router.js"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script src="./js/entities/frases.js"></script>
+	<script src="./js/entities/news.js"></script>
+	<script src="./js/apps/news/news_app.js"></script>
+	<script src="./js/apps/news/list/list_view.js"></script>
+	<script src="./js/apps/news/list/list_controller.js"></script>
+	<script src="./js/apps/news/show/show_view.js"></script>
+	<script src="./js/apps/news/show/show_controller.js"></script>
+	<script src="./js/apps/frases/frases_app.js"></script>
+	<script src="./js/apps/frases/list/list_view.js"></script>
+	<script src="./js/apps/frases/list/list_controller.js"></script>
+
 </head>
 <body>
 
-	<header></header>
+
+
+	<div id="main-region" class="container">
+		<p>Seccion principal, co los bordes, el titulo y las cosas fijas.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- TEMPLATES -->
+
 <!--<div id="up_left" class="corners"></div>
 <div id="up_right" class="corners"></div>
 <div id="down_left" class="corners"></div>
-<div id="down_right" class="corners"></div>-->
+<div id="down_right" class="corners"></div>
 
-<div id="main-region" class="container">
-	<p>Seccion principal, co los bordes, el titulo y las cosas fijas.</p>
-</div>
 
-<!--div class="feed" id="feedsFB">
+<div class="feed" id="feedsFB">
 	<div class="swiper-wrapper">
 		<div class="swiper-slide">Hoolaaa</div>
 		<div class="swiper-slide">Chau</div>
@@ -35,54 +70,48 @@
 		<div class="swiper-slide">Hoolaaa</div>
 		<div class="swiper-slide">Vamooo</div>
 	</div>
-</div-->
-<script type="text/template"class="feed" id="feeds-list">
-	<td><%- foto %></td>
-	<td><%- autor %></td>
-	<td>
-		<a href="#contacts/<%- id %>" class="btn btn-small js-show">
-			<i class="icon-eye-open"></i>Muestra</a>
-		<button class="btn btn-small js-delete">
-			<i class="icon-remove"></i>Borrar</button>
-	</td>
-</script>
-<script type="text/template" id="feed-view">
-	<td><%- foto %></td>
-	<td><%- autor %></td>
-	<td><%- comentario %></td>
+</div>
+-->
+
+<script type="text/template" id="news-list-item">
+<p> "<%- foto %>" </p>
+<h2 class="autor"><%- autor %></h2>
 </script>
 
-		<div id="pupil_debugger">Hola, probando</div>
-
-    <div id="wrapper">
-        <nav id="n0">
-        </nav>
-        <main>
-
-
-        <div class="feed">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Hoolaaa</div>
-                <div class="swiper-slide">Chau</div>
-                <div class="swiper-slide">Daleee</div>
-                <div class="swiper-slide">Hoolaaa</div>
-                <div class="swiper-slide">Vamooo</div>
-            </div>
-        </div>
+<script type="text/template" id="news-list-view">
+<header class="titulo">Noticias</header>
+<div class="feed">
+<div class="swiper-wrapper"></div>
+</div>
+</script>
 
 
-        </main>
-        <nav id="n1">
-        </nav>
-    </div>
 
+<script type="text/template" id="news-show-view">
+<td><%- foto %></td>
+<td><%- autor %></td>
+<td><%- comentario %></td>
+</script>
+
+<script type="text/javascript" id="slider-page-view">
+<nav id="n0"></nav>
+<main class="js_slider_content">
+</main>
+<nav id="n1"></nav>
+</script>
+
+
+
+
+
+<!--
 <video id="Video1" controls >
-     <source src="http://translate.google.com/translate_tts?ie=UTF-8;q=Hello%20World;tl=en-us" type="audio/mpeg"/>
+	<source src="http://translate.google.com/translate_tts?ie=UTF-8;q=Hello%20World;tl=en-us" type="audio/mpeg"/>
 </video>
 
 <button onClick="javascript: login();"></button>
 <button onClick="javascript: getFeed();"></button>
-<button onClick="javascript: hablar();"></button>
+<button onClick="javascript: hablar();"></button>-->
 </body>
 <script>
 window.fbAsyncInit = function() {

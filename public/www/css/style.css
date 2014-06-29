@@ -1,14 +1,15 @@
 html{
     height: 100%;
+    width:100%;
     margin:0;
     padding: 0;
-    font-family: Verdana, Tahoma, Arial;
 }
 body{
-    padding: 8%;
+    padding: 8% 0 8% 0;
     margin: 0;
     box-sizing: border-box;
     height: 100%;
+    width: 100%;
     background-image: url(surface.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -18,8 +19,22 @@ body{
     height: 100%;
     width: 100%;
     max-width: 1024px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
+}
+.page{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+#page0{
+    display: none;
+}
+#page1{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between; 
 }
 nav{
     width: 15%;
@@ -30,7 +45,7 @@ nav{
     height: 100%;
     opacity: 1.0;
     max-height: 750px;
-    background-color: yellow;
+    background-color: grey;
 }
 #n1{
     border-top-left-radius: 0;
@@ -40,51 +55,51 @@ nav{
 }
 main{
     width: 70%;
-    border: 1px solid red;
+    border: 2px solid transparent;
     min-width: 300px;
     height: 100%;
     max-height: 1000px;
     background-color: green;
     overflow: scroll;
 }
-
-
-
-#up_left{
-	position: absolute;
-	top:0px;
-	left: 0px;
+#izq{
+    width: 25%;
+    height: 100%;
+    background-color: green;
+    display:flex;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
-
-#up_right{
-	position: absolute;
-	top:0px;
-	right: 0px;
+#cerrar0{
+    width: 100%;
+    height: 25%;
+    background-color: yellow;
 }
-
-#down_left{
-	position: absolute;
-	bottom: 0px;
-	left: 0px;
+#comentar0{
+    width: 100%;
+    height: 25%;
+    background-color: red;
 }
-
-#down_right{
-	position:absolute;
-	bottom: 0px;
-	right: 0px;
+#middle{
+    width: 50%;
+    background-color: blue;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content:center;
 }
-
-.corners{
-	background-color: red;
-	width: 20%;
-	height: 30%;
+.smb{
+    width: 47%;
+    height: 24%;
+    box-sizing: border-box;
 }
-
-.feed {
-  width: 200px;
-  height: 80%;
+#cl{
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-right-style: solid;
+    border-right-color: black;
+    background-color: lightblue;
 }
-
-.swiper-slide{
-	 width: 200px;
-}
+#cm{
+    border-bottom-style: solid;
+    border-bottom-color: black;
