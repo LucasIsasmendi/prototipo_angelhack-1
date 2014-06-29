@@ -5,28 +5,66 @@ $(function(){
     slidesPerView:3
   });
 
-/*
-var ContactManager = new Marionette.Application();
 
-ContactManager.addRegions({
-	mainRegion: "#main-region"
-});
+	var FeedManager = new Marionette.Application();
 
-ContactManager.StaticView = Marionette.ItemView.extend({
-	template: "#static-template"
-});
-ContactManager.on("initialize:after", function(){
-	var staticView = new ContactManager.StaticView({
-	template: "#different-static-template"
-});
+	FeedManager.addRegions({
+		mainRegion: "#main-region"
+	});
 
-ContactManager.mainRegion.show(staticView);
+	FeedManager.Contact = Backbone.Model.extend({});
 
-});
+	FeedManager.FeedCollection = Backbone.Collection.extend({
+		model: FeedManager.Contact
+	});
 
-ContactManager.start();
-*/
+	FeedManager.FeedItemView = Marionette.ItemView.extend({
+		tagName: "li",
+		template: "#feeds-list"
+	});
 
+	FeedManager.FeedsView = Marionette.CollectionView.extend({
+		tagName: "ul",
+		itemView: FeedManager.FeedItemView
+	});
+
+	FeedManager.on("initialize:after", function(){
+	var feeds = new FeedManager.FeedCollection([
+		{
+			foto: "Nico",
+			autor: "Nico",
+			comentario: "555-0160"
+		},
+		{
+			foto: "Nacho",
+			autor: "Nacho",
+			comentario: "555-0161"
+		},
+		{
+			foto: "Leonardo",
+			autor: "Leonardo",
+			comentario: "555-0162"
+		},
+		{
+			foto: "Emmanuel",
+			autor: "Emmanuel",
+			comentario: "555-0163"
+		},
+		{
+			foto: "Leonardo",
+			autor: "Lucas",
+			comentario: "555-0164"
+		}
+	]);
+
+	var feedsListView = new FeedManager.ContactsView({
+		collection: feeds
+	});
+
+	FeedManager.mainRegion.show(feedsListView);
+	});
+
+	FeedManager.start();
 
 });
 

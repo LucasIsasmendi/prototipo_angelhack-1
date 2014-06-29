@@ -1,0 +1,43 @@
+* hablar:
+====================
+comunicación general
+	1 Hola, cómo estas?
+	2 Cómo fue tu día?
+	3 Puedo audarte con algo?
+	4 Hasta Luego
+comunicación internet
+	1 No tengo internet
+	2 Se colgó la computadora
+	3 La cuenta de internet no responde
+	4
+necesidad básica
+	1 Tengo hambre
+	2 Tengo sed
+	3 Tengo sueño
+	4 Necesito ir al baño
+urgencia
+	1 Tengo que ir al baño
+	2 No me siento bien
+	3 Me duele la cabeza
+	4 Estoy acalambrado
+
+* comentar:
+=======================
+comentario positivo
+	1 Me gusta mucho lo que pusiste
+	2 Muy interesante tu link
+	3 Muy Bueno!!
+	4 Te felicito!!
+comentario negativo
+	1 No concuerdo con lo que pusiste
+	2 Prefiero algo distinto
+	3 No me gusta eso
+	4 Una porquería!!
+comentario neutro
+	1 Saludos a todos
+	2 Gracias
+	3 De nada
+	4 Cuidate
+escribir mediante teclado
+
+
