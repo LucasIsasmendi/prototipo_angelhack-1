@@ -35,7 +35,7 @@ define(['jquery', 'underscore', 'Backbone', '../views/MainView', '../views/Feeds
                 var mainView = new FeedsView();
                 $('#container').html('');
                 $('#container').append(mainView.$el);
-                
+
             },
 
             feeds:function(){
@@ -76,10 +76,11 @@ define(['jquery', 'underscore', 'Backbone', '../views/MainView', '../views/Feeds
             },
             hablarCategoria:function(id){
                 console.log("#menuHablarCategoria");
-                var feedsView = new HablarCategoriaView();
+                console.log('IUPI!!!!!!', id);
+                var feedsView = new HablarCategoriaView({categoriaElegida: id});
                 $('#container').html('');
                 $('#container').append(feedsView.$el);
-            }         
+            }
         });
 
 return Router;

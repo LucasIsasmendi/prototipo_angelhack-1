@@ -9,35 +9,21 @@ define(['jquery', 'underscore', 'Backbone', 'text!./MenuFeedView.tpl'],
 				console.log("mama");
 				this.template = _.template(MenuFeedTemplate);
 				this.render();
-				this.renderConFeeds([{nombre:"hola"},{nombre:"chau"}]);
-
 			},
 
-			render:function () {
-				var self= this;
+			render: function() {
+				var self = this;
 				console.log("hola");
-				var feeds = [{nombre:"hola"},{nombre:"chau"}];
-				console.log(this.feeds);
-                // Setting view HTML from a template
-                this.$el.html(this.template({feeds: feeds}));
+        this.$el.html(this.template({}));
 
-               // return this.$el;
-           },
+				this.$el.find("#menuFeed").show();
+				this.$('.botonMenuTopLeft').click(function(e) {
+					console.log("menuhablarclickeado");
+					Backbone.history.navigate("#feeds",{trigger:true});
+				});
+      }
 
-      renderConFeeds:function(feeds){
-           	var self= this;
-           	console.log("hola");
-           	console.log(feeds);
-                // Setting view HTML from a template
-            this.$el.html(this.template({feeds: feeds}));
-                /*var mySwiper = new Swiper('.swiper-container',{
-                	pagination: '.pagination',
-                	paginationClickable: true,
-                	mode: 'vertical'
-                });*/
-            }
-
-        });
+    });
 
 return MainView;
 });

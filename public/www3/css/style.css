@@ -62,12 +62,12 @@ body {
 }
 
 #background {
-  background: url("../img/surface.png");
-  background-repeat: no-repeat;
-  background-size: 1132px 800px; /* 1132px 800px; */
+	background: url("../img/surface.png");
+	background-repeat: no-repeat;
+	background-size: 1000px 700px; /* 1132px 800px; */
     position:relative;
-  width: 1132px;
-  height: 800px;
+	width: 1000px;
+	height: 700px;
     margin:auto;
 }
 
@@ -86,7 +86,7 @@ body {
     background-color:rgba(0,0,0,0.2);
 }
 
-.boton:hover > div.loading {
+.boton.activo > div.loading {
     -webkit-transition:width 2s ease-in-out;
     width:100%;
 }
@@ -104,15 +104,8 @@ div.menu {
 }
 
 div.menu_der {
-    background-color:#5d7ad5;
     left:auto;
     right:0;
-    color:#2a3760;
-}
-
-div.menu_izq {
-    background-color:#5dd56e;
-    color:#2f6c38;
 }
 
 div.menu > .boton_contenido {
@@ -154,10 +147,15 @@ section > div.contenido > ul > li > h1 {
     font-size:50px;
     font-weight:300;
     border-bottom:1px solid #d5d5d5;
-    padding-top:15px;
-    padding-bottom:22px;
+    padding-top:30px;
+    padding-bottom:18px;
     margin:0;
     text-align:center;
+}
+
+section > div.contenido > ul > li > h1 > span.icono {
+    display:inline-block;
+    background: 0 50% no-repeat;
 }
 
 section > div.contenido > ul > li > strong {
@@ -165,8 +163,8 @@ section > div.contenido > ul > li > strong {
     font-size:20px;
     font-weight:300;
     border-bottom:1px solid #d5d5d5;
-    padding-top:12px;
-    padding-bottom:14px;
+    padding-top:9px;
+    padding-bottom:9px;
     margin:0;
     text-align:center;
 }
@@ -232,6 +230,16 @@ section > div.contenido > ul > li.activo {
 
 #feed {
 
+}
+
+#feed > div.menu.menu_izq {
+    background-color:#d95ddb;
+    color:#7c357d;
+}
+
+#feed > div.menu.menu_der {
+    background-color:#5d7ad5;
+    color:#2a3760;
 }
 
 #feed > div.menu > .boton_contenido > div.icono {
@@ -369,51 +377,62 @@ section > div.contenido > ul > li.activo {
 
 }
 
-#hablar_categoria > div.menu > .boton_contenido > div.icono {
+#hablar_categoria > div.menu.menu_izq,
+#hablar_cetegoria_items > div.menu.menu_izq {
+    background-color:#f90e4d;
+    color:#660220;
+}
+
+#hablar_categoria > div.menu.menu_der,
+#hablar_cetegoria_items > div.menu.menu_der {
+    background-color:#38e358;
+    color:#186f29;
+}
+
+#hablar_categoria > div.menu > .boton_contenido,
+#hablar_cetegoria_items > div.menu > .boton_contenido {
     text-indent:-9999px;
     overflow:hidden;
     margin-bottom:7px;
 }
 
-#hablar_categoria > div.menu.menu_izq > div.boton_contenido > div.icono {
-    height:65px;
-    background:url(images/-microfono.png) 50% 50% no-repeat;
+#hablar_categoria > div.menu > .boton_contenido > div.icono,
+#hablar_cetegoria_items > div.menu > .boton_contenido > div.icono {
+    text-indent:-9999px;
+    overflow:hidden;
+    margin-bottom:7px;
 }
 
-#hablar_categoria > div.menu.menu_der > div.boton_contenido > div.icono {
-    height:59px;
-    background:url(images/-menu.png) 50% 50% no-repeat;
-}
-
-#hablar_categoria > div.contenido > ul > li {
-    text-align:center;
-    font-size:30px;
-    padding:40px;
-}
-
-
-
-
-
-
-#hablar_cetegoria_items {
-
-}
-
+#hablar_categoria > div.menu.menu_izq > div.boton_contenido > div.icono,
 #hablar_cetegoria_items > div.menu.menu_izq > div.boton_contenido > div.icono {
-    height:65px;
-    background:url(images/-microfono.png) 50% 50% no-repeat;
+    height:60px;
+    background:url(images/cancelar.png) 50% 50% no-repeat;
 }
 
+#hablar_categoria > div.menu.menu_der > div.boton_contenido > div.icono,
 #hablar_cetegoria_items > div.menu.menu_der > div.boton_contenido > div.icono {
-    height:59px;
-    background:url(images/-menu.png) 50% 50% no-repeat;
+    height:54px;
+    background:url(images/seleccionar.png) 50% 50% no-repeat;
 }
 
+#hablar_categoria > div.contenido > ul > li,
 #hablar_cetegoria_items > div.contenido > ul > li {
     text-align:center;
     font-size:30px;
-    padding:40px;
+    padding:62px 30px 69px 30px;
+}
+
+#hablar_categoria > div.contenido > ul > li.activo,
+#hablar_cetegoria_items > div.contenido > ul > li.activo {
+    border-color:#d95ddb;
+}
+
+#hablar_categoria > div.contenido > ul > li > h1 > span.icono,
+#hablar_cetegoria_items > div.contenido > ul > li > h1 > span.icono {
+    width:22px;
+    height:35px;
+    margin-right:5px;
+    background-image:url("images/microfono-(chico).png");
 }
 
 
@@ -424,6 +443,19 @@ section > div.contenido > ul > li.activo {
 #comentarios_categoria {
 
 }
+
+#comentarios_categoria > div.menu.menu_izq,
+#comentarios_cetegoria_items > div.menu.menu_izq {
+    background-color:#f90e4d;
+    color:#660220;
+}
+
+#comentarios_categoria > div.menu.menu_der,
+#comentarios_cetegoria_items > div.menu.menu_der {
+    background-color:#38e358;
+    color:#186f29;
+}
+
 
 #comentarios_categoria > div.contenido > ul > li > h1,
 #comentarios_cetegoria_items > div.contenido > ul > li > h1 {
@@ -438,7 +470,7 @@ section > div.contenido > ul > li.activo {
     border-bottom:1px solid #d5d5d5;
     padding-bottom:14px;
     margin:0;
-    text-align:center;
+    text-align:left;
 }
 
 #comentarios_categoria > div.contenido > ul > li > div.publicacion > img,
@@ -451,56 +483,70 @@ section > div.contenido > ul > li.activo {
     height:60px;
 }
 
+#comentarios_categoria > div.contenido > ul > li > div.publicacion > strong,
+#comentarios_cetegoria_items > div.contenido > ul > li > div.publicacion > strong {
+    display:block;
+    font-size:16px;
+    padding-left:70px;
+    margin-bottom:4px;
+}
+
 #comentarios_categoria > div.contenido > ul > li > div.publicacion > p,
 #comentarios_cetegoria_items > div.contenido > ul > li > div.publicacion > p {
     padding-left:70px;
     margin:0;
+    font-size:12px;
     text-align:left;
 }
 
-#comentarios_categoria > div.menu > .boton_contenido > div.icono {
+#comentarios_categoria > div.menu > .boton_contenido > div.icono,
+#comentarios_cetegoria_items > div.menu > .boton_contenido > div.icono {
     text-indent:-9999px;
     overflow:hidden;
     margin-bottom:7px;
 }
 
-#comentarios_categoria > div.menu.menu_izq > div.boton_contenido > div.icono {
-    height:65px;
-    background:url(images/-microfono.png) 50% 50% no-repeat;
-}
-
-#comentarios_categoria > div.menu.menu_der > div.boton_contenido > div.icono {
-    height:59px;
-    background:url(images/-menu.png) 50% 50% no-repeat;
-}
-
-#comentarios_categoria > div.contenido > ul > li {
-    text-align:center;
-    font-size:30px;
-    padding:40px;
-}
-
-
-
-
-
-
-#comentarios_cetegoria_items {
-
-}
-
+#comentarios_categoria > div.menu.menu_izq > div.boton_contenido > div.icono,
 #comentarios_cetegoria_items > div.menu.menu_izq > div.boton_contenido > div.icono {
-    height:65px;
-    background:url(images/-microfono.png) 50% 50% no-repeat;
+    height:55px;
+    background:url(images/volver.png) 50% 50% no-repeat;
 }
 
+#comentarios_categoria > div.menu.menu_der > div.boton_contenido > div.icono,
 #comentarios_cetegoria_items > div.menu.menu_der > div.boton_contenido > div.icono {
-    height:59px;
-    background:url(images/-menu.png) 50% 50% no-repeat;
+    height:54px;
+    background:url(images/seleccionar.png) 50% 50% no-repeat;
 }
 
+#comentarios_categoria > div.contenido > ul > li,
 #comentarios_cetegoria_items > div.contenido > ul > li {
     text-align:center;
     font-size:30px;
-    padding:40px;
+    padding:62px 30px 69px 30px;
+}
+
+#comentarios_categoria > div.contenido > ul > li.activo,
+#comentarios_cetegoria_items > div.contenido > ul > li.activo {
+    border-color:#fee500;
+}
+
+#comentarios_categoria > div.contenido > ul > li > h1 > span.icono,
+#comentarios_cetegoria_items > div.contenido > ul > li > h1 > span.icono {
+    width:45px;
+    height:41px;
+    margin-right:5px;
+    background-image:url("images/comentar-(chico).png");
+}
+
+
+
+
+
+
+.cursor {
+  background-color: rgba(0,0,0,0.7);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 99999;
 }

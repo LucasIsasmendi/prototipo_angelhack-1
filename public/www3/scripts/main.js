@@ -4,10 +4,12 @@ require.config({
         underscore:'libs/underscore/underscore',
         Backbone:'libs/backbone/backbone',
         jquery:'libs/jquery/jquery-1.8.2',
+        scrollTo:'libs/jquery/scrollTo',
+        io: '/socket.io/socket.io.js'
     },
     shim:{
         Backbone:{
-            deps:['underscore', 'jquery'],
+            deps:['underscore', 'jquery', 'scrollTo', 'io'],
             exports:'Backbone'
         },
         underscore:{

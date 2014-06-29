@@ -1,6 +1,6 @@
 		<section id="feed">
 
-		<div class="menu menu_izq boton jsBoton jsActivable">
+		<div class="menu menu_izq boton jsBoton jsActivable" data="menu_izq">
 			<div class="loading"></div>
 			<div href="#menuHablar" class="boton_contenido">
 				<div class="icono">[ico]</div>
@@ -16,7 +16,7 @@
 				</li>
 				<% _.each(feeds,function(feed){  %>
 
-				<li class="jsActivable activo">
+				<li class="jsActivable jsFeedItem">
 					<div class="feed_avatar"><img src="http://graph.facebook.com/<%= feed.from.id %>/picture" /></div>
 					<div class="feed_autor"><%= feed.from.name %></div>
 					<div class="feed_fecha">12/12/14</div>
@@ -30,7 +30,7 @@
 
 		</div>
 
-		<div  class="menu menu_der boton jsBoton jsActivable">
+		<div  class="menu menu_der boton jsBoton jsActivable" data="menu_der">
 			<div class="loading"></div>
 			<div href="#menuFeed" class="boton_contenido">
 				<div class="icono">[ico]</div>

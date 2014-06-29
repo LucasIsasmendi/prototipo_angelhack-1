@@ -1,5 +1,5 @@
 
-define(['jquery', 'underscore', 'Backbone', 'text!./HablarView.tpl', '../models/frases'],
+define(['jquery', 'underscore', 'Backbone', 'text!./HablarCategoria.tpl', '../models/frases'],
 	function ($, _, Backbone, HablarTemplate, FrasesModels) {
 
 		var MainView = Backbone.View.extend({
@@ -7,6 +7,7 @@ define(['jquery', 'underscore', 'Backbone', 'text!./HablarView.tpl', '../models/
 			initialize:function (options) {
 				var self = this;
 				this.template = _.template(HablarTemplate);
+				self.categoriaElegida = options.categoriaElegida;
 				this.render();
 
 			},
@@ -55,8 +56,11 @@ define(['jquery', 'underscore', 'Backbone', 'text!./HablarView.tpl', '../models/
           ]
         }
         ];
-        
-        this.$el.html(this.template({frases: frases[id].frase, categoria:frases[id].name}));
+
+				console.log('>>>>>>>>>>>', frases)
+        this.$el.html(this.template({frases: frases[self.categoriaElegida].frases, categoria:frases[self.categoriaElegida].name}));
+				this.$el.find("#hablar_cetegoria_items").show();
+
         this.$(".hablable").click(function(e){
           var fraseAHablar = $(e.target).html();
           this.hablar(fraseAHablar);
@@ -64,12 +68,33 @@ define(['jquery', 'underscore', 'Backbone', 'text!./HablarView.tpl', '../models/
           });
 
 
+				this.$el.find("li").removeClass("activo");
+				this.$el.find("li:nth-child(2)").addClass("activo");
+
+				var contador = 1;
+
+				self.$el.find("li:not(:first-child)").each(function(index, miElemento) {
+					$(miElemento).attr('data', contador);
+					contador++;
+				});
+
+				this.$('.menu_der').click(function(e){
+					console.log("menuclickeado");
+					this.hablar("te kb kachimba");
+					Backbone.history.navigate("#",{trigger:true});
+				});
+				this.$('.menu_izq').click(function(e){
+					console.log("menuhablarclickeado");
+					Backbone.history.navigate("#menuHablar",{trigger:true});
+				});
+
+				self.$el.find("#hablar_categoria").show();
 
       },
 
       hablar:function(frase){
         console.log("voy a decir: fraseee" + frase);
-      } 
+      }
 
     });
 
