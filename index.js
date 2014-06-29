@@ -6,6 +6,10 @@ var express = require('express');
 var app = express();
 var http = require('http');
 
+app.get('/hablar', function(req, res){
+  res.json({test: "hola"});
+});
+
 console.log('configurando static');
 app.use(express.static(__dirname + '/public'));
 

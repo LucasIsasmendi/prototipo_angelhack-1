@@ -5,6 +5,24 @@ $(function(){
     slidesPerView:3
   });
 
+  var moverMirada = function(x,y) {
+    console.log('moverMirada', x, y);
+  };
+
+	var socket = io.connect('http://localhost');
+	socket.on('gaze', function (data) {
+		// console.log(data);
+		// socket.emit('my other event', { my: 'data' });
+
+		var relativeX = data.x;
+		var relativeY = 1-data.y;
+
+		var gazeX = 20 + (relativeX * maxX); // margin
+		var gazeY = 20 + (relativeY * maxY); // margin
+
+		moveGaze(gazeX,gazeY);
+
+	});
 
 var ContactManager = new Marionette.Application();
 
@@ -29,4 +47,3 @@ ContactManager.start();
 
 
 });
-
