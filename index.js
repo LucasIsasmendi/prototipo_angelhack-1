@@ -6,8 +6,10 @@ var express = require('express');
 var app = express();
 var http = require('http');
 
+var dataHablar = require("./data/frases.json");
+
 app.get('/hablar', function(req, res){
-  res.json({test: "hola"});
+  res.json(dataHablar);
 });
 
 console.log('configurando static');
