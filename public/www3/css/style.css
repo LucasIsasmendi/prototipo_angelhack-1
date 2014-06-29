@@ -550,3 +550,27 @@ section > div.contenido > ul > li.activo {
   position: absolute;
   z-index: 99999;
 }
+
+
+div.animacion_megusta {
+    display:none;
+    position:fixed;
+    z-index:999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.7);
+}
+
+div.animacion_megusta > div.icono {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:300px;
+    height:300px;
+    margin-top:-150px;
+    margin-left:-150px;
+    background:url(images/mano.svg) no-repeat 50% 50%;
+    background-size:contain;
+}

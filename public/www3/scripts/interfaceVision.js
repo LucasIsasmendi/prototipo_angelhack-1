@@ -25,7 +25,7 @@ define(['jquery', 'underscore', 'Backbone', 'io'],
 
         self.maxX = $("#background").width();
         self.maxY = $("#background").height();
-        self.testMode = false;
+        self.testMode = true;
         self.delegar = opciones.delegar;
 
         // console.log("max:", self.maxX, self.maxY, "-- test mode?", self.testMode);
@@ -92,7 +92,7 @@ define(['jquery', 'underscore', 'Backbone', 'io'],
 
           self.contadorActivaciones++;
           self.ultimaActivacion = $padreActivable.attr('data');
-          $(".cursor").text(self.ultimaActivacion);
+          // $(".cursor").text(self.ultimaActivacion);
 
           if ($padreActivable.hasClass("jsActivable") && $padreActivable.is("li")) {
 
