@@ -15,13 +15,10 @@ OjosQueHablan.module("News.List", function(List, OjosQueHablan, Backbone, Marion
 
   List.PageView = Backbone.Marionette.LayoutView.extend({
     template: "#slider-page-view",
-
     regions: {
       sliderContentRegion: ".js_slider_content",
     }
   });
 
-  var layoutView = new AppLayoutView();
-  layoutView.render();
 
 });

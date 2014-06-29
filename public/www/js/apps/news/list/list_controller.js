@@ -1,7 +1,7 @@
 OjosQueHablan.module("NewsApp.List", function(List, OjosQueHablan, Backbone, Marionette, $, _){
   List.Controller = {
     listNews: function(){
-      var news = OjosQueHablan.request("news:entities", );
+      var news = OjosQueHablan.request("news:entities");
 
       var newsListView = new List.News({
         collection: news
@@ -25,5 +25,5 @@ OjosQueHablan.module("NewsApp.List", function(List, OjosQueHablan, Backbone, Mar
      OjosQueHablan.mainRegion.show(newsPageView);
     }
   }
-  
+
 });

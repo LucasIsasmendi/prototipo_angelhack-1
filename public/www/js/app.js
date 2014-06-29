@@ -48,10 +48,14 @@ OjosQueHablan.on("initialize:after", function(){
     Backbone.history.start();
 
     if(this.getCurrentRoute() === ""){
-      OjosQueHablan.trigger("contacts:list");
+      OjosQueHablan.trigger("news:list");
     }
   }
 });
+
+OjosQueHablan.start();
+
+
 
 
 /////////PointDATA
@@ -75,17 +79,3 @@ OjosQueHablan.on("initialize:after", function(){
 
 	});
 
-	var OjosQueHablan = new Marionette.Application();
-
-	OjosQueHablan.addRegions({
-		mainRegion: "#main-region"
-	});
-
-	OjosQueHablan.on("initialize:after", function(){
-		OjosQueHablan.NewsApp.List.Controller.listNews();	
-
-	});
-
-	OjosQueHablan.start();
-
-});
