@@ -191,11 +191,18 @@ define(['jquery', 'underscore', 'Backbone', 'scripts/interfaceVision.js', 'text!
 				console.log(audios);
 				//query+="&tl=es-ar";
 					//console.log(query);
+
+					var audio = new Audio(query);
+					audio.play();
+					/*
+
 					var $myVideo = $("#videolindo"); // document.getElementsByTagName('video')[0];
 					console.log(query);
-					$myVideo.src = encodeURI(query);
+					$myVideo.empty().append("<source src='" + query + "' type='video/mp4'>");
+					// $myVideo.src = encodeURI(query);
 					$myVideo.load();
 					$myVideo.play();
+					*/
 
 			}
 
