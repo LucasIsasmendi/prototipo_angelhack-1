@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Comentario positivo",
+    "frases": [
+      "Me gusta mucho lo que pusiste",
+      "Muy interesante tu link",
+      "Muy bueno!",
+      "Te felicito!"
+    ]
+  },
+  {
+    "name": "Comentario negativo",
+    "frases": [
+      "No concuerdo con lo que pusiste",
+      "Prefiero algo distinto",
+      "No me gusta eso",
+      "Una porqueria"
+    ]
+  },
+  {
+    "name": "Comentario neutro",
+    "frases": [
+      "Saludos a todos!",
+      "Gracias",
+      "De nada",
+      "Cuidate!"
+    ]
+  }
+]
