@@ -65,13 +65,14 @@ body {
 	background: url("../img/surface.png");
 	background-repeat: no-repeat;
 	background-size: 1000px 700px; /* 1132px 800px; */
-	position: absolute;
-	top: 0px; /* Header Height */
-	bottom: 0px; /* Footer Height */
+    position:relative;
 	width: 1000px;
 	height: 700px;
-	border: 0px;
-    left: 10px;
+    margin:auto;
+}
+
+#menuFeed {
+    display:none;
 }
 /*
 .menu {
@@ -101,14 +102,13 @@ body {
 
 
 
-#menuFeed {
-  display: none;
-}
+
+
 
 #feed {
-
-
-
+    
+    
+    
 }
 
 #feed > .menu {
@@ -121,7 +121,7 @@ body {
     text-align:center;
 }
 
-#feed > .menu_der {
+#feed > .menu_der { 
     background-color:#5d7ad5;
     left:auto;
     right:0;
@@ -171,24 +171,93 @@ body {
     list-style:none;
     padding:0;
     margin:0;
+    text-align:left;
 }
 
 #feed > .contenido > ul > li > h1 {
     font-size:50px;
     font-weight:300;
     border-bottom:1px solid #d5d5d5;
+    padding-top:15px;
     padding-bottom:22px;
+    margin:0;
 }
 
 #feed > .contenido > ul > li {
+    position:relative;
     border:3px solid #d5d5d5;
     margin-bottom:30px;
+    border-radius:3px;
+    padding:15px;
+    opacity:0.5;
 }
 
 #feed > .contenido > ul > li:first-child {
     border:none;
+    padding:0;
+    opacity:1;
+}
+
+#feed > .contenido > ul > li.activo {
+    border-color:#5d7ad5;
+    opacity:1;
+}
+
+#feed > .contenido > ul > li > div.feed_avatar {
+    position:absolute;
+    top:0;
+    left:0;
+    width:110px;
+    height:110px;
+    overflow:hidden;
+}
+
+#feed > .contenido > ul > li > div.feed_avatar > img {
+    display:block;
+    width:100%;
 }
 
 #feed > .contenido > ul > li > div.feed_autor {
+    position:absolute;
+    left:122px;
     font-size:18px;
 }
+
+#feed > .contenido > ul > li > div.feed_fecha {
+    position:absolute;
+    left:122px;
+    top:41px;
+    color:#909090;
+    font-size:13px;
+}
+
+#feed > .contenido > ul > li > div.feed_likes,
+#feed > .contenido > ul > li > div.feed_comentarios {
+    padding-left:22px;
+    position:absolute;
+    top:78px;
+    left:122px;
+    font-weight:bold;
+    font-size:13px;
+    letter-spacing:-0.5px;
+}
+
+#feed > .contenido > ul > li > div.feed_likes {
+    background:url(images/like-small.png) 0 50% no-repeat;
+}
+
+#feed > .contenido > ul > li > div.feed_comentarios {
+    padding-left:24px;
+    left:235px;
+    background:url(images/comments.png) 0 50% no-repeat;
+}
+
+#feed > .contenido > ul > li > div.feed_contenido {
+    padding-top:110px;
+    font-size:12px;
+    text-emphasis-style: dot;
+}
+    
+
+
+
