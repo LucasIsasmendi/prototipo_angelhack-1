@@ -80,7 +80,7 @@ $(document).ready(function() {
 
   }
 
-  var testMode = false;
+  var testMode = true;
 
   if (testMode) {
 		$(document).mousemove(function(event) {
