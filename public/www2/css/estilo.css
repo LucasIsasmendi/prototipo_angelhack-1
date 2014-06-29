@@ -1,0 +1,194 @@
+/* Lato */
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:300;
+  src:local('Lato Light'),
+      local('Lato-Light'),
+      url(fonts/Lato-Light.woff) format('woff'),
+      url(http://themes.googleusercontent.com/static/fonts/lato/v7/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+@font-face {
+  font-family:Lato;
+  font-style:italic;
+  font-weight:300;
+  src:local('Lato Light Italic'),
+      local('Lato-Light-Italic'),
+      url(fonts/Lato-Light-Italic.woff) format('woff'),
+      url(http://themes.googleusercontent.com/static/fonts/lato/v7/2HG_tEPiQ4Z6795cGfdivLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family:Lato;
+  font-style:normal;
+  font-weight:normal;
+  src:local('Lato Regular'),
+      local('Lato-Regular'),
+      url(fonts/Lato-Regular.woff) format('woff'),
+      url(http://themes.googleusercontent.com/static/fonts/lato/v7/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family:Lato;
+  font-style:italic;
+  font-weight:normal;
+  src:local('Lato Regular Italic'),
+      local('Lato-Regular-Italic'),
+      url(fonts/Lato-RegularItalic.woff) format('woff'),
+      url(http://themes.googleusercontent.com/static/fonts/lato/v7/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family:Lato;
+  font-style:italic;
+  font-weight:bold;
+  src:local('Lato Bold Italic'),
+      local('Lato-Bold-Italic'),
+      url(fonts/Lato-Bold.woff) format('woff'),
+      url(http://themes.googleusercontent.com/static/fonts/lato/v7/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+
+
+
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+    font-family:Lato;
+}
+
+body {
+
+}
+
+#background {
+	background: url("../img/surface.png");
+	background-repeat: no-repeat;
+	background-size: 1000px 700px; /* 1132px 800px; */
+	position: absolute;
+	top: 0px; /* Header Height */
+	bottom: 0px; /* Footer Height */
+	width: 1000px;
+	height: 700px;
+	border: 0px;
+    left: 10px;
+}
+/*
+.menu {
+  border: 1px solid red;
+  width: 100px;
+  height: 100%;
+  top: 0;
+}
+.menu_izq {
+  position: absolute;
+  left: 0;
+}
+.menu_der {
+  position: absolute;
+  right: 0;
+}
+*/
+#principal {
+    position:absolute;
+    top:83px;
+    left:83px;
+    width:calc(100% - 166px);
+    height:calc(100% - 166px);
+}
+
+
+
+
+
+#menuFeed {
+  display: none;
+}
+
+#feed {
+
+
+
+}
+
+#feed > .menu {
+    position:absolute;
+    top:0;
+    left:0;
+    width:25%;
+    height:100%;
+    border-radius:3px;
+    text-align:center;
+}
+
+#feed > .menu_der {
+    background-color:#5d7ad5;
+    left:auto;
+    right:0;
+    color:#2a3760;
+}
+
+#feed > .menu_izq {
+    background-color:#5dd56e;
+    color:#2f6c38;
+}
+
+#feed > .menu > .boton_contenido {
+    position:absolute;
+    bottom:40%;
+    width:100%;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+#feed > .menu > .boton_contenido > div.icono {
+    text-indent:-9999px;
+    overflow:hidden;
+    margin-bottom:7px;
+}
+
+#feed > .menu.menu_izq > .boton_contenido > div.icono {
+    height:65px;
+    background:url(images/microfono.png) 50% 50% no-repeat;
+}
+
+#feed > .menu.menu_der > .boton_contenido > div.icono {
+    height:59px;
+    background:url(images/menu.png) 50% 50% no-repeat;
+}
+
+#feed > .contenido {
+    position:absolute;
+    left:25%;
+    width:50%;
+    height:100%;
+    padding:0 3%;
+    box-sizing:border-box;
+    overflow-y:auto;
+}
+
+#feed > .contenido > ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+#feed > .contenido > ul > li > h1 {
+    font-size:50px;
+    font-weight:300;
+    border-bottom:1px solid #d5d5d5;
+    padding-bottom:22px;
+}
+
+#feed > .contenido > ul > li {
+    border:3px solid #d5d5d5;
+    margin-bottom:30px;
+}
+
+#feed > .contenido > ul > li:first-child {
+    border:none;
+}
+
+#feed > .contenido > ul > li > div.feed_autor {
+    font-size:18px;
+}
