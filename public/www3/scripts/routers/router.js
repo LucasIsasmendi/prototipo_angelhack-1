@@ -30,7 +30,7 @@ define(['jquery', 'underscore', 'Backbone', '../views/MainView', '../views/Feeds
                 }
             },
 
-            home:function () {
+            home: function () {
                 console.log('#home');
                 var mainView = new FeedsView();
                 $('#container').html('');

@@ -30,7 +30,7 @@ define(['jquery', 'underscore', 'Backbone', 'io'],
 
         // console.log("max:", self.maxX, self.maxY, "-- test mode?", self.testMode);
 
-        self.ultimoItemElegido = null;
+        self.ultimoItemElegido = 1;
 
         self.itemActivo = null;
         self.contadorActivaciones = 0;

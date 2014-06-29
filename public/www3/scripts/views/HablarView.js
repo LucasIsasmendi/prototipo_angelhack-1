@@ -87,7 +87,8 @@ define(['jquery', 'underscore', 'Backbone', 'scripts/interfaceVision.js', 'text!
 
 				self.$el.find('.menu_der').click(function(e){
 					console.log("menuclickeado");
-					Backbone.history.navigate("#hablar/22",{trigger:true});
+					alert("TODO MAL!");
+					Backbone.history.navigate("#hablar/1",{trigger:true});
 				});
 				self.$el.find('.menu_izq').click(function(e){
 					console.log("menuhablarclickeado");
@@ -108,15 +109,15 @@ define(['jquery', 'underscore', 'Backbone', 'scripts/interfaceVision.js', 'text!
       },
 			accionUI: function(accion, itemElegido) {
 				if (accion === "menu_izq") {
-					console.log('FeedsView recibio invocacion de MENU IZQ');
+					console.log('SELECTOR DE CATEGORIAS recibio invocacion de MENU IZQ');
 					Backbone.history.navigate("#feeds",{trigger:true});
 
 				} else if (accion === "menu_der") {
-					console.log('FeedsView recibio invocacion de MENU DER');
+					console.log('SELECTOR DE CATEGORIAS recibio invocacion de MENU DER');
 					var elegida = itemElegido;
 					Backbone.history.navigate("#hablar/" + elegida,{trigger:true});
 				}
-			},
+			}
 
     });
 
