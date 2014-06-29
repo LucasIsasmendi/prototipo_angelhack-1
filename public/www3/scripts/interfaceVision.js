@@ -25,7 +25,7 @@ define(['jquery', 'underscore', 'Backbone', 'io'],
 
         self.maxX = $("#background").width();
         self.maxY = $("#background").height();
-        self.testMode = true;
+        self.testMode = false;
         self.delegar = opciones.delegar;
 
         // console.log("max:", self.maxX, self.maxY, "-- test mode?", self.testMode);
